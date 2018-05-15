@@ -5,7 +5,8 @@ const api = new Router()
 
 api
     .get('/', async (ctx, next) => {
-        ctx.body = await controller.index()
+        const data = await controller.index()
+        await ctx.render('index', data)
     })
 
 export default api
