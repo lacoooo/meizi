@@ -5,7 +5,9 @@ const api = new Router()
 
 api
     .get('/', async (ctx, next) => {
-        const data = await controller.index()
+        const data = controller.index()
+        data.data.pop()
+        console.log(data)
         await ctx.render('index', data)
     })
 

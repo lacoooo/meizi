@@ -4,8 +4,8 @@
   "scripts": {
     "nodemon": "nodemon ./server/main.js",
     "tsc": "tsc -w",
-    "dev": "node ./dev.js",
-    "build": "tsc",
+    "dev": "node dev.js",
+    "gulp": "gulp",
     "start": "pm2 start ./server/main.js -w",
     "stop": "pm2 delete all"
   },
@@ -22,6 +22,7 @@
     "koa-cookie": "^1.0.0",
     "koa-pug": "^3.0.0-2",
     "koa-router": "^7.3.0",
+    "koa-static": "^4.0.2",
     "koa-views": "^6.1.4",
     "pm2": "^2.9.1",
     "shelljs": "^0.8.1"

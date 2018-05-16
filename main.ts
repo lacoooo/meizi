@@ -4,6 +4,7 @@ import * as compress from 'koa-compress'
 import * as bodyParser from 'koa-bodyparser'
 import * as cors from '@koa/cors'
 import * as views from 'koa-views'
+import * as Kstatic from 'koa-static'
 
 import api from './router/index'
 
@@ -14,6 +15,8 @@ app
 	.use(cookie())
 	.use(compress({ threshold: 1024 }))
 	.use(bodyParser())
+	.use(Kstatic(__dirname + '/../../data/xiegif/1/'))
+	.use(Kstatic(__dirname + '/../views/assets/'))
 	.use(views(__dirname + '/views',
 		{
 			extension: 'pug'
