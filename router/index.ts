@@ -4,10 +4,9 @@ import * as Router from 'koa-router'
 const api = new Router()
 
 api
-    .get('/', async (ctx, next) => {
-        const data = controller.index()
-        data.data.pop()
-        console.log(data)
+    .get('/mmgif/:page', async (ctx, next) => {
+        const page = ctx.params.page
+        const data = controller.index(page)
         await ctx.render('index', data)
     })
 

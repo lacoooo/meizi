@@ -15,13 +15,9 @@ app
 	.use(cookie())
 	.use(compress({ threshold: 1024 }))
 	.use(bodyParser())
-	.use(Kstatic(__dirname + '/../../data/xiegif/1/'))
+	.use(Kstatic(__dirname + '/../../data/qiubaigif'))
 	.use(Kstatic(__dirname + '/../views/assets/'))
-	.use(views(__dirname + '/views',
-		{
-			extension: 'pug'
-		}
-	))
+	.use(views(__dirname + '/views', { extension: 'pug' }))
 	.use(api.routes())
 	.use(api.allowedMethods())
 

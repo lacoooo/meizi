@@ -5,8 +5,10 @@ html(lang="en")
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    link(rel="stylesheet", href=`http://localhost:8000/css/`)
+    link(rel="stylesheet", href=`http://localhost:8000/css/index.css`)
   body
-    h1 data
-    img(src=`http://localhost:8000/${data[0]}`)
-    img
+    .wrap
+      each item in data
+        .content
+          .title #{item.title}
+          img.mmgif(src=`http://localhost:8000/${page}/${item.name}`)
