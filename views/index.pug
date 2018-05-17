@@ -8,17 +8,17 @@ html(lang="en")
     link(rel="stylesheet", href=`http://localhost:8000/css/index.css`)
   body
     .wrap
-      .current 第#{page}页
-      .to_page
-        if page > 1
-          a.button.next(href=`/mmgif/${ page * 1 - 1 }`) 上一页
-        a.button.next(href=`/mmgif/${ page * 1 + 1 }`) 下一页
       each item in data
         .content
           .title #{item.title}
           img.mmgif(src=`http://localhost:8000/${page}/${item.name}`)
-      .current 第#{page}页
       .to_page
         if page > 1
           a.button.next(href=`/mmgif/${ page * 1 - 1 }`) 上一页
         a.button.next(href=`/mmgif/${ page * 1 + 1 }`) 下一页
+      .current
+        span 去第
+        input
+        span 页
+        span.button.confirm 确定
+    script(src="http://localhost:8000/js/index.js")

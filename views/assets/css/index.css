@@ -2,16 +2,63 @@ html, body {
   margin: 0;
   padding: 0; }
 
+.wrap {
+  max-width: 500px;
+  margin: 0 auto; }
+
 .content {
   width: calc(100% - 60px);
-  margin: 40px auto; }
+  margin: 20px auto;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  padding: 14px;
+  border-radius: 8px; }
   .content .title {
-    color: rgba(0, 0, 0, 0.7); }
+    color: rgba(0, 0, 0, 0.7);
+    line-height: 2;
+    margin-bottom: 8px; }
   .content img.mmgif {
     display: block;
     width: 100%;
-    margin: 20px auto; }
+    opacity: 0.05; }
 
-.to_page a {
-  color: #000;
-  text-decoration: none; }
+.to_page {
+  width: calc(100% - 30px);
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between; }
+  .to_page a {
+    color: #000;
+    text-decoration: none;
+    display: inline-block;
+    flex-grow: 0.48;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    line-height: 2.6;
+    font-size: 0.9rem;
+    text-align: center; }
+
+.current {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  letter-spacing: 2px; }
+  .current input {
+    width: 70px;
+    height: 40px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    margin: 0 6px;
+    box-sizing: border-box;
+    outline: none;
+    text-align: center; }
+  .current .confirm {
+    width: 80px;
+    height: 40px;
+    line-height: 40px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    display: inline-block;
+    margin-left: 12px;
+    transform: translateY(2px); }
+
+.hide {
+  display: none; }

@@ -6,8 +6,8 @@ const api = new Router()
 api
     .get('/mmgif/:page', async (ctx, next) => {
         const page = ctx.params.page
-        const data = controller.index(page)
-        await ctx.render('index', data)
+        const info = controller.index(page)
+        await ctx.render('index', info)
     })
 
 export default api
