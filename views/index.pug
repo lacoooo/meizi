@@ -1,14 +1,24 @@
 doctype html
 html(lang="en")
   head
-    title= pageTitle
+    title= `美女搞笑动图${page}`
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     link(rel="stylesheet", href=`http://localhost:8000/css/index.css`)
   body
     .wrap
+      .current 第#{page}页
+      .to_page
+        if page > 1
+          a.button.next(href=`/mmgif/${ page * 1 - 1 }`) 上一页
+        a.button.next(href=`/mmgif/${ page * 1 + 1 }`) 下一页
       each item in data
         .content
           .title #{item.title}
           img.mmgif(src=`http://localhost:8000/${page}/${item.name}`)
+      .current 第#{page}页
+      .to_page
+        if page > 1
+          a.button.next(href=`/mmgif/${ page * 1 - 1 }`) 上一页
+        a.button.next(href=`/mmgif/${ page * 1 + 1 }`) 下一页

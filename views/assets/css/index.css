@@ -1,21 +1,17 @@
-
 html, body {
-    margin: 0;
-    padding: 0;
-}
+  margin: 0;
+  padding: 0; }
 
 .content {
-    width: calc(100% - 60px);
-    margin: 40px auto;
-}
-
-.content .title {
-    color: rgba(0, 0, 0, 0.7);
-}
-
-.content img.mmgif {
+  width: calc(100% - 60px);
+  margin: 40px auto; }
+  .content .title {
+    color: rgba(0, 0, 0, 0.7); }
+  .content img.mmgif {
     display: block;
     width: 100%;
-    margin: 20px auto;
+    margin: 20px auto; }
 
-}
+.to_page a {
+  color: #000;
+  text-decoration: none; }
