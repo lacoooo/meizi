@@ -10,15 +10,16 @@ html, body {
 }
 
 .content {
-    width: calc(100% - 60px);
+    width: calc(100% - 30px);
     margin: 20px auto;
     border: 1px solid rgba(0, 0, 0, 0.06);
-    padding: 14px;
+    padding: 8px;
     border-radius: 8px;
     .title {
         color: rgba(0, 0, 0, 0.7);
         line-height: 2;
         margin-bottom: 8px;
+        font-size: 0.7rem;
     }
     img.mmgif {
         display: block;
@@ -27,21 +28,16 @@ html, body {
     }
 }
 
-.to_page{
-    width: calc(100% - 30px);
+.to_page_wrap {
+    width: calc(100% - 48px);
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
+    .to_page {
+        width: 100%;
+    }
     a {
-        color: #000;
-        text-decoration: none;
-        display: inline-block;
-        flex-grow: 0.48;
-        border: 1px solid rgba(0, 0, 0, 0.1);
-        box-sizing: border-box;
-        line-height: 2.6;
-        font-size: 0.9rem;
-        text-align: center;
+        display: block;
     }
 }
 
@@ -75,3 +71,12 @@ html, body {
     display: none;
 }
 
+.top_bar {
+    margin: 20px;
+    .accordion {
+        i {
+            position: absolute;
+            right: 16px;
+        }
+    }
+}

@@ -7,35 +7,30 @@ html, body {
   margin: 0 auto; }
 
 .content {
-  width: calc(100% - 60px);
+  width: calc(100% - 30px);
   margin: 20px auto;
   border: 1px solid rgba(0, 0, 0, 0.06);
-  padding: 14px;
+  padding: 8px;
   border-radius: 8px; }
   .content .title {
     color: rgba(0, 0, 0, 0.7);
     line-height: 2;
-    margin-bottom: 8px; }
+    margin-bottom: 8px;
+    font-size: 0.7rem; }
   .content img.mmgif {
     display: block;
     width: 100%;
     opacity: 0.05; }
 
-.to_page {
-  width: calc(100% - 30px);
+.to_page_wrap {
+  width: calc(100% - 48px);
   margin: 0 auto;
   display: flex;
   justify-content: space-between; }
-  .to_page a {
-    color: #000;
-    text-decoration: none;
-    display: inline-block;
-    flex-grow: 0.48;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    box-sizing: border-box;
-    line-height: 2.6;
-    font-size: 0.9rem;
-    text-align: center; }
+  .to_page_wrap .to_page {
+    width: 100%; }
+  .to_page_wrap a {
+    display: block; }
 
 .current {
   text-align: center;
@@ -62,3 +57,9 @@ html, body {
 
 .hide {
   display: none; }
+
+.top_bar {
+  margin: 20px; }
+  .top_bar .accordion i {
+    position: absolute;
+    right: 16px; }
