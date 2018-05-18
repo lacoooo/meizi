@@ -9,15 +9,15 @@ import * as Kstatic from 'koa-static'
 import api from './router/index'
 
 const app = new Koa()
-const port: number = 8000
+const port: number = 80
 app
 	.use(cors())
 	.use(cookie())
 	.use(compress({ threshold: 1024 }))
 	.use(bodyParser())
-	.use(Kstatic(__dirname + '/../../data/qiubaigif'))
+	.use(Kstatic(__dirname + '/../../data'))
 	.use(Kstatic(__dirname + '/../views/assets/'))
-	.use(views(__dirname + '/views', { extension: 'pug' }))
+	.use(views(__dirname + '/../views', { extension: 'pug' }))
 	.use(api.routes())
 	.use(api.allowedMethods())
 

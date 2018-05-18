@@ -2,8 +2,8 @@ import * as fs from 'fs'
 import * as path from 'path'
 
 export default {
-    index(page) {
-        const dir = path.resolve(`${__dirname}/../../../../data/qiubaigif/${page}`)
+    index(page, type) {
+        const dir = path.resolve(`${__dirname}/../../../../data/${type}/${page}`)
 
         let imgs = fs.readdirSync(dir)
         let titlesPath = imgs.pop()
@@ -11,6 +11,7 @@ export default {
         imgs = JSON.parse(titles).pics
 
         const info = {
+            url: type,
             page: page,
             data: imgs
         }

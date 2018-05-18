@@ -9,10 +9,6 @@ const files = [
     'views/**/**/**/*'
 ]
 
-gulp.task('views', () => {
-    gulp.watch(files, ['copy'])
-})
-
 gulp.task('scss', () => {
     gulp.watch('./views/assets/css/*.scss', ['scss-covert'])
 })
@@ -23,9 +19,4 @@ gulp.task('scss-covert', () => {
         .pipe(gulp.dest('./views/assets/css/'))
 })
 
-gulp.task('copy', () => {
-    shell.rm('-rf', './server/views')
-    shell.cp('-R', './views/', './server')
-})
-
-gulp.task('default', ['scss', 'views'])
+gulp.task('default', ['scss'])

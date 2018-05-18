@@ -11,10 +11,12 @@ html, body {
 
 .content {
     width: calc(100% - 30px);
-    margin: 20px auto;
+    margin: 0 auto;
+    margin-bottom: 20px;
     border: 1px solid rgba(0, 0, 0, 0.06);
     padding: 8px;
     border-radius: 8px;
+
     .title {
         color: rgba(0, 0, 0, 0.7);
         line-height: 2;
@@ -72,11 +74,36 @@ html, body {
 }
 
 .top_bar {
-    margin: 20px;
+    height: 50px;
     .accordion {
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        right: 16px;
         i {
             position: absolute;
-            right: 16px;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
         }
+    }
+}
+
+.to_list {
+    position: absolute;
+    top: 54px;
+    right: 10px;
+    width: 100px;
+    text-align: center;
+    background: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    border-radius: 10px;
+    padding: 12px;
+    z-index: 1;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+    a {
+        display: block;
+        color: rgba(0, 0, 0, 0.7);
+        line-height: 2.3;
     }
 }

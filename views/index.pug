@@ -5,34 +5,32 @@ html(lang="en")
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    link(rel="stylesheet", href=`http://localhost:8000/css/index.css`)
-    link(rel="stylesheet", href=`http://localhost:8000/css/spectre-icons.min.css`)
+    link(rel="stylesheet", href=`/css/index.css`)
+    link(rel="stylesheet", href=`/css/spectre-icons.min.css`)
     link(rel='stylesheet', href=`https://cdn.bootcss.com/spectre.css/0.5.1/spectre.min.css`)
   body
-    .wrap#app
+    .wrap#app(@click='cancel')
       .top_bar
-        <div class="accordion">
-          <label class="accordion-header">
-            <i class="icon icon-arrow-down mr-1"></i>
-            Title
-          </label>
-          <div class="accordion-body">
-            <!-- Accordions content -->
-          </div>
+        <div @click.stop='showMenu' class="accordion">
+          <i class="icon icon-arrow-down mr-1"></i>
         </div>
+        .to_list(v-if='menuFlag' style='display: none')
+          a(href=`/gif/1`) 动图一
+          a(href=`/gif2/1`) 动图二
+          a(href=`/pic/1`) 美女图
       each item in data
         .content
-          .title #{item.title}
-          img.mmgif(src=`http://localhost:8000/${page}/${item.name}`)
+          .title #{ item.title }
+          img.mmgif(src=`/${ url }/${ page }/${ item.name }`)
       .to_page_wrap
         .to_page.btn-group
           if page > 1
-            a.btn(href=`/mmgif/${ page * 1 - 1 }`) 上一页
-          a.btn(href=`/mmgif/${ page * 1 + 1 }`) 下一页
+            a.btn(href=`/${ url }/${ page * 1 - 1 }`) 上一页
+          a.btn(href=`/${ url }/${ page * 1 + 1 }`) 下一页
       .current
         span 去第
         input(v-model='toPageNum')
         span 页
         span.button.confirm(@click='toPage') 确定
     script(src='https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js')
-    script(src="http://localhost:8000/js/index.js")
+    script(src="/js/index.js")
