@@ -1,16 +1,45 @@
 import * as fs from 'fs'
 import * as path from 'path'
+import { resolve } from 'dns'
+import { rejects } from 'assert'
+
+const exist = async (dir) => {
+    return new Promise((resolve, rejects) => {
+        fs.stat(dir, (err, data) => {
+            if (err) resolve(false)
+            else resolve(true)
+        })
+    })
+}
+
+const readDir = async (dir) => {
+    return new Promise((resolve, reject) => {
+        fs.readdir(dir, 'utf-8', (err, files) => {
+            resolve(files[0])
+        })
+    })
+}
+
+const readFile = async (dir, titlesPath) => {
+    return new Promise((resolve, rejects) => {
+        fs.readFile(`${dir}/${titlesPath}`, 'utf-8', (err, data) => {
+            resolve(data)
+        });
+    })
+}
 
 export default {
-    index(page, type, url) {
+    async index(page, type, url) {
         const dir = path.resolve(`${__dirname}/../../../data/${type}/${page}`)
 
         let imgs = []
-        if (fs.existsSync(dir)) {
-            let titlesPath = fs.readdirSync(dir)[0]
-            let titles = fs.readFileSync(`${dir}/${titlesPath}`, 'utf-8')
+        let existPath = await exist(dir)
+        if (existPath) {
+            let titlesPath = await readDir(dir)
+            let titles = await readFile(dir, titlesPath) + ''
             imgs = JSON.parse(titles).pics
-          }
+
+        }
 
         const info = {
             url: url,
