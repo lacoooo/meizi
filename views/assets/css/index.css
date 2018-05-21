@@ -2,9 +2,33 @@ html, body {
   margin: 0;
   padding: 0; }
 
+input:-webkit-autofill, select:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px white  inset !important; }
+
+input {
+  -webkit-appearance: none; }
+
 .wrap {
   max-width: 500px;
   margin: 0 auto; }
+
+.logo {
+  font-weight: 800;
+  padding: 10px 10px 10px 20px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03); }
+  .logo span {
+    float: right;
+    margin-right: 16px; }
+
+.half {
+  opacity: 0.5;
+  font-weight: 400 !important; }
+
+.more {
+  right: 30px;
+  width: 30px;
+  position: absolute; }
 
 .content {
   width: calc(100% - 30px);
@@ -21,7 +45,7 @@ html, body {
   .content img.mmgif {
     display: block;
     width: 100%;
-    opacity: 0.05; }
+    opacity: 1; }
 
 .to_page_wrap {
   width: calc(100% - 48px);
@@ -49,23 +73,28 @@ html, body {
   .current .confirm {
     width: 80px;
     height: 40px;
-    line-height: 40px;
+    line-height: 38px;
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     display: inline-block;
-    margin-left: 12px;
-    transform: translateY(2px); }
+    margin-left: 12px; }
 
 .hide {
   display: none; }
 
 .top_bar {
-  height: 50px; }
+  height: 36px;
+  line-height: 36px;
+  padding-left: 24px;
+  font-weight: 800;
+  position: relative;
+  font-size: 0.7rem; }
   .top_bar .accordion {
-    width: 50px;
-    height: 50px;
+    width: 36px;
+    height: 36px;
     position: absolute;
-    right: 16px; }
+    right: 16px;
+    top: 0; }
     .top_bar .accordion i {
       position: absolute;
       left: 50%;
@@ -74,7 +103,7 @@ html, body {
 
 .to_list {
   position: absolute;
-  top: 54px;
+  top: 40px;
   right: 10px;
   width: 100px;
   text-align: center;
@@ -88,3 +117,8 @@ html, body {
     display: block;
     color: rgba(0, 0, 0, 0.7);
     line-height: 2.3; }
+
+.footer {
+  margin-bottom: 20px;
+  opacity: .4;
+  text-align: center; }

@@ -1,7 +1,8 @@
 doctype html
 html(lang="en")
   head
-    title= `美女搞笑动图${page}`
+    title= `美女搞笑图库-${url}-${page}`
+    //- <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-5MHDZB2');</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -9,9 +10,18 @@ html(lang="en")
     link(rel="stylesheet", href=`/css/spectre-icons.min.css`)
     link(rel='stylesheet', href=`https://cdn.bootcss.com/spectre.css/0.5.1/spectre.min.css`)
   body
+    //- <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5MHDZB2" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     .wrap#app(@click='cancel')
+      .logo 搞笑美女网
       .top_bar
+        if url == 'gif'
+          span 动图一 <span class='half'>></span> #{ page }
+        else if url == 'gif2'
+          span 动图二 <span class='half'>></span> #{ page }
+        else if url == 'pic'
+          span 美女图 <span class='half'>></span> #{ page }
         <div @click.stop='showMenu' class="accordion">
+          .more 更多
           <i class="icon icon-arrow-down mr-1"></i>
         </div>
         .to_list(v-if='menuFlag' style='display: none')
@@ -21,7 +31,7 @@ html(lang="en")
       each item in data
         .content
           .title #{ item.title }
-          img.mmgif(src=`/${ url }/${ page }/${ item.name }`)
+          img.mmgif(src=`${ item.origin }`)
       .to_page_wrap
         .to_page.btn-group
           if page > 1
@@ -31,6 +41,9 @@ html(lang="en")
         span 去第
         input(v-model='toPageNum')
         span 页
-        span.button.confirm(@click='toPage') 确定
+        span.button.confirm(@click='toPage()') 确定
+        span#url(style='display: none') #{ url }
+        span.button.confirm(@click='toPage("random")') 随机
+      .footer - enjoygirl.club -
     script(src='https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js')
     script(src="/js/index.js")
