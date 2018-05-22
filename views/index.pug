@@ -36,7 +36,7 @@ html(lang="en")
       each item in data
         .content
           .title #{ item.title }
-          img.mmgif(src=`${ item.origin }`)
+          img.mmgif(data-src=`${ item.origin }`)
       .to_page_wrap
         .to_page.btn-group
           if page > 1

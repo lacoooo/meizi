@@ -39,6 +39,7 @@ input {
   margin-bottom: 20px;
   border: 1px solid rgba(0, 0, 0, 0.06);
   padding: 8px;
+  min-height: 250px;
   border-radius: 8px; }
   .content .title {
     color: rgba(0, 0, 0, 0.7);

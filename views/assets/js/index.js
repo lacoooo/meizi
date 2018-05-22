@@ -37,6 +37,17 @@ var app = new Vue({
         },
         cancel() {
             this.menuFlag = false
+        },
+        initImage() {
+            var imgs = document.querySelectorAll('.mmgif')
+            var len = imgs.length
+            var index = 0
+            setInterval(function() {
+                if (index < len) {
+                    imgs[index].src = imgs[index].dataset.src
+                }
+                index++
+            }, 700)
         }
     },
     created() {
@@ -44,5 +55,6 @@ var app = new Vue({
     },
     mounted() {
         this.url = document.getElementById('url').innerHTML
+        this.initImage()
     }
 })
