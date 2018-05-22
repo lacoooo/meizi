@@ -42,6 +42,10 @@ var app = new Vue({
             var imgs = document.querySelectorAll('.mmgif')
             var len = imgs.length
             var index = 0
+            if (index < len) {
+                imgs[index].src = imgs[index].dataset.src
+            }
+            index++
             setInterval(function() {
                 if (index < len) {
                     imgs[index].src = imgs[index].dataset.src
