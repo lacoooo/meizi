@@ -37,6 +37,7 @@ export default {
         if (existPath) {
             let titlesPath = await readDir(dir)
             let titles = await readFile(dir, titlesPath) + ''
+            console.log(JSON.parse(titles))
             imgs = JSON.parse(titles).pics
 
         }
