@@ -4,6 +4,7 @@
   "scripts": {
     "nodemon": "nodemon ./server/main.js",
     "tsc": "tsc -w",
+    "tscdone": "tsc",
     "dev": "node dev.js",
     "gulp": "gulp",
     "start": "pm2 start ./server/main.js -w",

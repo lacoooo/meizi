@@ -31,9 +31,29 @@ api
         await ctx.render('index', info)
     })
 
+    .get('/gif3/:page', async (ctx, next) => {
+        const page = ctx.params.page
+        const info = await controller.index(page, 'gif3_doc', 'gif3')
+        if (info.data.length < 1) {
+            ctx.redirect('/');ctx.status = 301
+            return
+        }
+        await ctx.render('index', info)
+    })
+
     .get('/pic/:page', async (ctx, next) => {
         const page = ctx.params.page
         const info = await controller.index(page, 'pic_doc', 'pic')
+        if (info.data.length < 1) {
+            ctx.redirect('/');ctx.status = 301
+            return
+        }
+        await ctx.render('index', info)
+    })
+
+    .get('/pic2/:page', async (ctx, next) => {
+        const page = ctx.params.page
+        const info = await controller.index(page, 'pic2_doc', 'pic2')
         if (info.data.length < 1) {
             ctx.redirect('/');ctx.status = 301
             return

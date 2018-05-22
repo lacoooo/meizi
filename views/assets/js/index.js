@@ -18,8 +18,10 @@ var app = new Vue({
             } else if (type == 'random') {
                 var all
                 if (this.url == 'gif') all = 177
-                else if (this.url == 'gif2') all = 365
+                else if (this.url == 'gif2') all = 130
+                else if (this.url == 'gif3') all = 365
                 else if (this.url == 'pic') all = 1002
+                else if (this.url == 'pic2') all = 1169
 
                 var page = Math.floor(Math.random() * all) + 1
                 
