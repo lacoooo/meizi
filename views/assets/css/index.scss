@@ -13,6 +13,13 @@ input {
     -webkit-appearance: none;
 }
 
+a {
+    &:hover {
+        color: #000;
+        text-decoration: none;
+    }
+}
+
 .wrap {
     max-width: 500px;
     margin: 0 auto;
@@ -96,6 +103,7 @@ input {
         border-radius: 4px;
         display: inline-block;
         margin-left: 12px;
+        cursor: pointer;
     }
 }
 
