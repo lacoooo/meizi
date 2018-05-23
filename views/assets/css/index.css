@@ -15,11 +15,13 @@ input {
 .logo {
   font-weight: 800;
   display: block;
-  color: #50596c;
+  background: #5755d9;
+  color: #ffffff;
   text-decoration: none;
   padding: 10px 10px 10px 20px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03); }
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03)
+}
   .logo span {
     float: right;
     margin-right: 16px; }
