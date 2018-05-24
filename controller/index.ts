@@ -43,6 +43,7 @@ export default {
 
         const info = {
             url: url,
+            title: imgs[0].title,
             page: page,
             data: imgs
         }
