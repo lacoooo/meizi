@@ -28,7 +28,7 @@ html(lang="en")
           .more 更多
           <i class="icon icon-arrow-down mr-1"></i>
         </div>
-        .to_list(v-if='menuFlag' style='display: none')
+        .to_list(:style="{'height': menuFlag ? 'auto' : '0', 'padding': menuFlag ? '12px':'0px', 'border' : menuFlag ? '1px solid rgba(0, 0, 0, 0.06)' : 'none'}")
           a(href=`/gif/1`) 动图一
           a(href=`/gif2/1`) 动图二
           a(href=`/gif3/1`) 动图三

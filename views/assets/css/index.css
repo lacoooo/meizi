@@ -109,16 +109,17 @@ input {
 
 .to_list {
   position: absolute;
+  height: 0;
+  overflow: hidden;
   top: 40px;
   right: 10px;
   width: 100px;
   text-align: center;
   background: #fff;
-  border: 1px solid rgba(0, 0, 0, 0.06);
   border-radius: 10px;
-  padding: 12px;
   z-index: 1;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03); }
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+}
   .to_list a {
     display: block;
     color: rgba(0, 0, 0, 0.7);

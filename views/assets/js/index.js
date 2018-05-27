@@ -55,7 +55,7 @@ var app = new Vue({
         }
     },
     created() {
-        document.querySelector('.to_list').style.display = 'block'
+
     },
     mounted() {
         this.url = document.getElementById('url').innerHTML
